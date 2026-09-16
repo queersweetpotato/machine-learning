@@ -11,6 +11,8 @@ The dataset used is *Abalone*, which can be found and downloaded [here](https://
 
 # Usage Guide
 
+The python version used for this project is 3.14.
+
 - this will include setup steps and commands needed to run the work, including order if needed
 - include info about any potential further processing the dataset needs
 - include python version and any system-specific requirements

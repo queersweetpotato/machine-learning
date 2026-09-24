@@ -1,3 +1,5 @@
 Packages
 
 for the dataset, you need to install ucimlrepo by running "pip install ucimlrepo" or "pip3 install ucimlrepo"
+
+for running the notebooks, you also need to install numpy, pandas, and matplotlib.

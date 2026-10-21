@@ -9,11 +9,14 @@ The dataset used is *Abalone*, which can be found and downloaded [here](https://
 
 # Project Structure
 
+The root directory has this READAME.md and requirements.txt, which contains a list of all required packages and versions.   
+
+The notebooks directory contains all the jupyter notebooks for this project.
+
 # Usage Guide
 
-The python version used for this project is 3.14.
+The python version used for this project is 3.14. Any other packages and versions required are in requirements.txt in the root directory of this project. 
 
-- this will include setup steps and commands needed to run the work, including order if needed
-- include info about any potential further processing the dataset needs
-- include python version and any system-specific requirements
-- note which packages are required, this can also be done in a requirements.txt or environment.yml file
+To run the project, enter the notebooks directory and launch jupyter notebook. Each notebook is self contained and can be run from top to bottom. 
+
+dataNotebook.ipynb contains the analysis of the dataset. Models.ipynb contains the preprocessing and creation of the baseline model.  

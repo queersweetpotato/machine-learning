@@ -5,7 +5,8 @@ This project is to train and compare models to predict the age of an abalone bas
 # Dataset
 
 The dataset used is *Abalone*, which can be found and downloaded [here](https://archive.ics.uci.edu/dataset/1/abalone).  
-- include any info about any potential further processing done
+
+All processing done on the dataset is done in the notebooks. The dataset does not include any missing values and upon inspection, no outliers requiring intervention. The preprocessing done was one-hot encoding of the sex variable.
 
 # Project Structure
 
@@ -19,4 +20,4 @@ The python version used for this project is 3.14. Any other packages and version
 
 To run the project, enter the notebooks directory and launch jupyter notebook. Each notebook is self contained and can be run from top to bottom. 
 
-dataNotebook.ipynb contains the analysis of the dataset. Models.ipynb contains the preprocessing and creation of the baseline model.  
+dataNotebook.ipynb contains the analysis of the dataset. Models.ipynb contains the preprocessing and creation of the models.  

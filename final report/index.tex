@@ -1,0 +1,99 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\projectname}{Machine Learning Final Report}
+
+\setlength\parindent{0pt}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0px}
+
+\fancyhead[L]{\projectname}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+\pagenumbering{arabic}
+\fancyfoot[R]{Page \thepage}
+
+\begin{titlepage}
+    \centering
+    \vspace*{4cm}
+    {\Large Final Report  \par}
+    \vspace{0.5cm}
+    {\Large Version 1.0 \par}
+    \vspace{0.5cm}
+    {\Large \today \par}
+    \vspace{2cm}
+    {\Large Cedar Pfeiffer (23701881)\par}
+    \vfill
+
+    Prepared for\\
+    CT4101--Machine Learning\par
+
+\end{titlepage}
+
+\newpage 
+
+\tableofcontents
+
+\newpage
+
+
+\section{Introduction}
+
+The repository for this project can be found \href{https://github.com/queersweetpotato/machine-learning}{here}. Its structure and any required run instructions or packages are explained in the repository.
+
+\section{Assistance Declaration}
+
+I hereby declare that I used no assistance from AI, coding assistants, human collaborators or used any external code anywhere in this repository or for the video submitted as part of this assigment. This includes this report, all notebooks, and instructions in the readme and requirements.txt.
+
+\section{Dataset Chosen}
+The dataset used is Abalone, cited and linked below.\\
+Dataset: https://archive.ics.uci.edu/dataset/1/abalone\\
+Abalone\\
+Nash, W., Sellers, T., Talbot, S., Cawthorn, A., & Ford, W. (1994). Abalone [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C55C7W.\\
+This dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.\\
+
+Number of records: 4177 
+
+Inputs: Sex, length, diameter, height, whole weight, shucked weight, viscera weigh, shell weight
+
+Target variable: Rings (translates into age by adding 1.5) 
+
+- data distribution and such from the datanotebook
+
+Issues with data:
+- Doesn’t contain any environmental data, so some abalone may be a different age than they seem due to adverse (or unusually good) conditions
+- We also don’t know if it is data from abalone from a specific area or around the world so we don’t know how representative the data is
+Somewhat old, this may matter if climate change has impacted abalone habitat conditions enough to impact their growth to age ratio
+
+ 
+- explain why this was chosen!
+
+\section{Responsible AI/ML use}
+In the context of this project, risks associated include breaking the license of the dataset. Since it is under the creative commons license, all that is required is to cite the authors as done above. The data from this set has no identifying information on any people or any private data.
+
+\section{Models Used}
+The baseline used is scikit-learn's DummyRegressor. Other models used are a classic linear regression (with ridge) and a knn model.
+
+EXPLAIN MORE
+
+\section{Training and Tuning Process}
+
+\section{Limitations}
+
+\section{Final Results}
+the final results, visualisations, 
+
+\section{Error Analysis}
+ 
+\section{Conclusion}
+
+\end{document}

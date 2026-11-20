@@ -14,6 +14,8 @@ The root directory has this READAME.md and requirements.txt, which contains a li
 
 The notebooks directory contains all the jupyter notebooks for this project.
 
+The final_report directory includes the final report pdf, as well as the latex version and its compile script.
+
 # Usage Guide
 
 The python version used for this project is 3.14. Any other packages and versions required are in requirements.txt in the root directory of this project. 

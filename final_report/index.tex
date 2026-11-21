@@ -130,7 +130,9 @@ The baseline used is scikit-learn's DummyRegressor with the mean strategy (it al
 
 Ridge was chosen because the data seems to suit a linear model. In general, if an abalone is larger or heavier one would assume it is typically older, and if it is an infant it is younger. Ridge was chosen over lasso, as all features are suspected to be relevant. \\   
 
-K nearest neighbours was chosen to have a non-linear model, as the dataset analysis showed that the data is not perfectly linear (oldest abalones were not the largest in any variable).
+K nearest neighbours was chosen to have a non-linear model, as the dataset analysis showed that the data is not perfectly linear (oldest abalones were not the largest in any variable).\\
+
+Originally, a decision tree model was proposed rather than a k nearest neighbour model. However, once implemented, I realised that the tree model collapsed into a linear model very early on. Since this does not deliver any interesting differences to look at (and thus learn from), I decided to switch to a k nearest neighbour model instead.
 
 \section{Data Preparation and Tuning Process}
 The data was split into 80\% train, 20\% test. A random split was deemed appropriate, since the rows are all independent (each is a separate abalone's measurements).

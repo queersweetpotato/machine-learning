@@ -192,6 +192,7 @@ We can determine this based on its error scores and the residual plot. The k nea
 Based on comparing the residual plots (more analysis above), we can determine that the k nearest neighbours  model is better than the ridge model for the most common range of target values.
 
 However, the k nearest neighbours model is not very good at predicting high target values, as can be seen from the residual plot. This is because these values are rare, and thus the model does not know how to adapt to them.
+Furthermore, the k nearest neighbours model is more resource intensive than the ridge model, so depending on the use case a slightly lower performance, cheaper model may be more appropriate.
 
 \section{Limitations}
 One major limitation in this portfolio was time constraints. If given more time, exploring more different models or more preprocessing (e.g. feature reduction) could have been interesting. Additionally, the quality of the model is limited due to above explained issues with the dataset (for instance, it does not include any environmental data).  

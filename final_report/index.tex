@@ -153,6 +153,7 @@ KNN: KNeighborsRegressor, algorithm=brute, metric=euclidean, n\_neighbors=15, we
 \section{Error Analysis}
 The root mean squared error is more sensitive to larger errors than the mean absolute error. They both represent the average error in prediction, just calculated in different ways. A smaller average error is indicative of a better model. 
 The r2 error represents how much the model explains/handles variance. A perfect r2 score would be 1.\\
+In this use case, neither false positives or false negatives have a substantially larger relevance (since this is not a situation such as predicting health conditions), so we do not need to put additional emphasis on reducing any particular sort of error over others.\\
 Here is a table of the errors of each model.\vspace{0.5cm}\\
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -189,10 +190,15 @@ The low ability to predict high target values in both the ridge and the k neares
 The current best model is the k nearest neighbours model with parameters algorithm=brute, metric=euclidean, n\_neighbors=15, and weights=distance.
 
 We can determine this based on its error scores and the residual plot. The k nearest neighbours model has the lowest root mean squared error and the lowest mean absolute error. In terms of r2 error, the k nearest neightbours model is the highest. 
-Based on comparing the residual plots (more analysis above), we can determine that the k nearest neighbours  model is better than the ridge model for the most common range of target values.
+Based on comparing the residual plots (more analysis above), we can determine that the k nearest neighbours  model is better than the ridge model for the most common range of target values. 
 
 However, the k nearest neighbours model is not very good at predicting high target values, as can be seen from the residual plot. This is because these values are rare, and thus the model does not know how to adapt to them.
 Furthermore, the k nearest neighbours model is more resource intensive than the ridge model, so depending on the use case a slightly lower performance, cheaper model may be more appropriate.
+Both the k nearest neighbours model and the ridge model are certainly much better than the baseline.
+
+It is unclear exactly for which use cases this model is appropriate, as it is unknown which species of abalone the dataset covers. It would mostly be useful for research, for instance when estimating the general age range of an abalone population in an area. 
+
+The workflow, especially data preparation, was fairly simple and streamlined. It could potentially be improved upon, but its current state delivers satisfactory results.
 
 \section{Limitations}
 One major limitation in this portfolio was time constraints. If given more time, exploring more different models or more preprocessing (e.g. feature reduction) could have been interesting. Additionally, the quality of the model is limited due to above explained issues with the dataset (for instance, it does not include any environmental data).  

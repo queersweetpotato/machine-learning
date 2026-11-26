@@ -1,6 +1,6 @@
 # Assignment for CT4101 Machine Learning
 
-This project is to train and compare models to predict the age of an abalone based on physical measurements.  
+This project is to train and compare models to predict the age of an abalone based on physical measurements. It includes a baseline and two trained models and a report detailing the process and results. 
 
 # Dataset
 

@@ -136,12 +136,13 @@ Originally, a decision tree model was proposed rather than a k nearest neighbour
 
 \section{Data Preparation and Tuning Process}
 The data was split into 80\% train, 20\% test. A random split was deemed appropriate, since the rows are all independent (each is a separate abalone's measurements).
+Different seeds for the random split were empirically tested and it was determined that the models behave similarly for different partitions and shuffles of the dataset.\\
 A preprocessing pipeline was created to encode sex data and ignore all other data. This was done with one-hot encoding (as to not confuse the K nearest neighbours model with artifically imposed ordering), dropping one value as to not introduce collinearity.
 No scaling was done for the K nearest neighbours model, as all features are alreay in the range 0-3 due to scaling being pre-performed on the dataset.
 
 The errors chosen to measure performance are the r squared error (abbreviated as r2), root mean squared error (abbreviated as rms), and mean absolute error (abbreviated as mae).
 
-No tuning was performed on the baseline. Both the ridge and the K nearest neighbour model were trained with GridSearchCV searching a parameter grid for the best parameters. 
+No tuning was performed on the baseline. Both the ridge and the K nearest neighbour model were trained with GridSearchCV searching a parameter grid for the best parameters. Different numbers of folds were attempted empirically and delivered similar results. 
 They were each trained separately with the penalty on each error (r2, rms, and mae) to see if different parameters were chosen. 
 If different parameters were chosen for different penalties, the other error scores were inspected and the best overall parameters were chosen. 
 
@@ -187,7 +188,7 @@ The model seems to perform worse with larger target values, as can be seen by th
 The low ability to predict high target values in both the ridge and the k nearest neighbours model indicates that they were not exposed to many high target features in training. This is likely because there are very few high target value features compared to lower values (the most common being ten).
 
 \section{Final Results}
-The current best model is the k nearest neighbours model with parameters algorithm=brute, metric=euclidean, n\_neighbors=15, and weights=distance.
+The current best performing model is the k nearest neighbours model with parameters algorithm=brute, metric=euclidean, n\_neighbors=15, and weights=distance.
 
 We can determine this based on its error scores and the residual plot. The k nearest neighbours model has the lowest root mean squared error and the lowest mean absolute error. In terms of r2 error, the k nearest neightbours model is the highest. 
 Based on comparing the residual plots (more analysis above), we can determine that the k nearest neighbours  model is better than the ridge model for the most common range of target values. 
@@ -196,7 +197,8 @@ However, the k nearest neighbours model is not very good at predicting high targ
 Furthermore, the k nearest neighbours model is more resource intensive than the ridge model, so depending on the use case a slightly lower performance, cheaper model may be more appropriate.
 Both the k nearest neighbours model and the ridge model are certainly much better than the baseline.
 
-It is unclear exactly for which use cases this model is appropriate, as it is unknown which species of abalone the dataset covers. It would mostly be useful for research, for instance when estimating the general age range of an abalone population in an area. 
+It is unclear exactly for which use cases this model is appropriate, as it is unknown which species of abalone the dataset covers. 
+It would be useful for research, for instance when estimating the general age range of an abalone population in an area. 
 
 The workflow, especially data preparation, was fairly simple and streamlined. It could potentially be improved upon, but its current state delivers satisfactory results.
 
@@ -206,6 +208,7 @@ One major limitation in this portfolio was time constraints. If given more time,
 \section{Conclusion}
 This report has covered the process and results of the machine learning portfolio assignment. The dataset, its preprocessing, the models used, results, and error analysis. The best model was the K nearest neighbours model, contradicting the hypothesis that the data had a linear structure. \\
 It however, is not very good at estimating edge cases (i.e. unsually large and unusally small target values) and could be further improved, potentially with feature reduction or bootsrapping to include more edge case values in the training set. Developing a model which is more sensitive to outliers and aggregating them could also be an option.
+Due to the lack of specificity of the data (it is unknown which species the data covers), the usefulness of the model is highly limited. As such, I would not recommend deploying it at this time. 
 
 \begin{thebibliography}{999}
 
